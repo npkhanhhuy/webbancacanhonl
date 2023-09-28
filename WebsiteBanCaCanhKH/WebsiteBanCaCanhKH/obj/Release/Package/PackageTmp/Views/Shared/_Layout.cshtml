@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="shortcut icon" href="~/img/slider/icon.jpg">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-color: #B5EFFC">
+        <nav class="nav navbar-inverse navbar-fixed-top" style="background-color:#7dfd63">
+            <div class="container" >
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href='@Url.Action("Index", "Home")'>
+                        <img src='@Url.Content("~/img/slider/logo.jpg")' style="height:50px"/>
+                    </a>
+                </div>
+                <!--thu gon nav-->
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Giới Thiệu", "GioiThieu", "Home") </li>
+                        <li>@Html.ActionLink("Tin Tức", "Tintuc", "Home")</li>
+                        <li>@Html.ActionLink("Liên Hệ", "LienHe", "Home")</li>
+                    </ul>
+                    <ul class="nav navbar-nav" style="margin-top:10px">
+                        @using (Html.BeginForm())
+                        {
+                            <p>
+                                @Html.TextBox("SearchString") <input type="submit" value="Tìm kiếm" />
+                            </p>
+                        }
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        @Html.Action("LoginLogout", "Home")
+                        @Html.Action("GioHangPartial", "GioHang")
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--Noi Dung-->
+        <div class="topp">
+            @RenderBody()
+        </div>
+        <!--Fooster-->
+        <div class=" body-content">
+            <footer class ="ft container well">
+                <div class="text-center ftt">
+                    <strong>
+                        TDMU<br />
+                        (0946) 276-072<br>
+                        Email: <a style="color:white" href="mailto:khanhhuy15102001@gmail.com">khanhhuy15102001@gmail.com</a><br>
+                        <p>Copyright &copy; @DateTime.Now.Year MyWebsite. All rights reserved.</p>
+                    </strong>
+                </div>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

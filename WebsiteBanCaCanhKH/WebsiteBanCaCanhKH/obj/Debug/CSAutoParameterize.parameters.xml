@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="QLBanCaCanhOnline-Web.config Connection String" description="QLBanCaCanhOnline Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.QLBanCaCanh.csdl|res://*/Models.QLBanCaCanh.ssdl|res://*/Models.QLBanCaCanh.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=nhom15.cu0rxjtrampt.us-east-1.rds.amazonaws.com;initial catalog=QLBanCaCanh;user id=admin;password=khanhhuy;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\HOC\\TaiLieu\\lt_web\\WebsiteBanCaCanhKH\\WebsiteBanCaCanhKH\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='QLBanCaCanhOnline']/@connectionString" />
+  </parameter>
+</parameters>

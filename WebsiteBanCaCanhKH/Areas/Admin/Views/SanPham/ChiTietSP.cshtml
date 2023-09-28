@@ -1,0 +1,82 @@
+﻿@model WebsiteBanCaCanhKH.Models.HangHoa
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Chi Tiết Sản Phẩm</title>
+</head>
+<body>
+    <div>
+        <h4>Chi Tiết Sản Phẩm</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TenHang)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TenHang)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TenNSX)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TenNSX)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TenLoaiHang)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TenLoaiHang)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SoLuong)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SoLuong)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DonViTinh)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DonViTinh)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Gia)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Gia)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LoaiHangHoa.TenLoaiHang)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LoaiHangHoa.TenLoaiHang)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MaHang }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

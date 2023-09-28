@@ -1,0 +1,25 @@
+﻿@using WebsiteBanCaCanhKH.Models
+@{
+    User kh = (User)Session["TenDN"];
+}
+
+@if (Session["TenDN"] == null)
+{
+    <li>
+        <a href="~/User/DangKy"><span class="glyphicon glyphicon-user"></span> Đăng ký</a>
+    </li>
+    <li>
+        <a href="~/User/DangNhap"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a>
+    </li>
+}
+else
+{
+    <li>
+        <a href="~/User/SuaThongTinKH?MaUser=@kh.MaUser"><span class="glyphicon glyphicon-user"></span> Xin chào:@kh.HoTen</a>
+    </li>
+    <li>
+        <a href="@Url.Action("DangXuat","User")"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a>
+    </li>
+}
+
+

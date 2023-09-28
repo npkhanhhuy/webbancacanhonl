@@ -1,0 +1,72 @@
+﻿@model IEnumerable<WebsiteBanCaCanhKH.Models.HangHoa>
+@{
+    ViewBag.Title = "Danh Sách Sản Phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DsSanPham</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Danh Sách Sản Phẩm</h2>
+        <p>
+            @Html.ActionLink("Thêm Sản Phẩm Mới", "ThemSpmoi", "SanPham")
+        </p>
+        <div class="container">
+            <table class="table">
+                <tr>
+                    <th>Mã Hàng</th>
+                    <th>Tên Hàng</th>
+                    <th>Tên NSX</th>
+                    <th>Tên Loại Hàng</th>
+                    <th>Số Lượng</th>
+                    <th>Đơn Vị Tính</th>
+                    <th>Giá</th>
+                    <th>Ảnh</th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MaHang)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TenHang)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TenNSX)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TenLoaiHang)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SoLuong)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DonViTinh)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gia) VNĐ
+                        </td>
+                        <td>
+                            <img src="~/img/sanpham/@item.Anh" class="img-responsive img-rounded imgbook" style="width:50px"/>
+                        </td>
+                        <td>
+                            <a href="~/Admin/SanPham/SuaSanPham?MaHang=@item.MaHang">Sửa</a> |
+                            <a href="~/Admin/SanPham/XoaSanPham?MaHang=@item.MaHang">Xóa</a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>               
+    </div>
+ 
+</body>
+</html>

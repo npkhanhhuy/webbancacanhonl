@@ -1,0 +1,60 @@
+﻿@using WebsiteBanCaCanhKH.Models
+@{
+    User kh = (User)Session["TenDN"];
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="~/img/slider/icon.jpg">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="nav navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!--thu gon nav-->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="~/Admin/Home">Admin</a></li>
+                    <li><a href="~/Admin/SanPham/DsSanPham">Danh Sách Sản Phẩm</a> </li>
+                    <li><a href="~/Admin/Home/DSKhachHang">Danh Sách Khách Hàng</a></li>
+                    <li><a href="~/Admin/Home/DSDonHang">Danh Sách Đơn Hàng</a></li>
+                    <li></li>
+                </ul>
+
+
+                @if (Session["TenDN"] == null)
+                {
+                    
+                }
+                else
+                {
+                    <ul class="nav navbar-nav" style="float:right">
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-user"></span> Xin chào:@kh.HoTen</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("DangXuat","Home")"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a>
+                        </li>
+                    </ul>
+                }
+
+                </div>
+
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

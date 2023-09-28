@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Default Web Site/" />
+  <setParameter name="QLBanCaCanhOnline-Web.config Connection String" value="metadata=res://*/Models.QLBanCaCanh.csdl|res://*/Models.QLBanCaCanh.ssdl|res://*/Models.QLBanCaCanh.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=nhom15.cu0rxjtrampt.us-east-1.rds.amazonaws.com;initial catalog=QLBanCaCanh;user id=admin;password=khanhhuy;MultipleActiveResultSets=True;App=EntityFramework&quot;" />
+</parameters>
